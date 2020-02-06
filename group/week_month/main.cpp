@@ -12,7 +12,7 @@ int main()
   // Ask user if they want to input weekly or monthly sales
   cout << "Do you want to input daily or monthly sales: weekly or monthly ";
   cin >> user_selection;
-  
+
   // Iterate on the users selection allowing them to enter data
   if (user_selection == "weekly")
     {
@@ -72,7 +72,74 @@ int main()
     }
   else if(user_selection == "monthly")
     {
-      cout << "monthly" << endl;
+      for(int i=0; i<=12; i++)
+	{
+	  switch(i)
+	    {
+	    case 1:
+	      cout << "Enter sales for January: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 2:
+	      cout << "Enter sales for February: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 3:
+	      cout << "Enter sales for March: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 4:
+	      cout << "Enter sales for April: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 5:
+	      cout << "Enter sales for May: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 6:
+	      cout << "Enter sales for June: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 7:
+	      cout << "Enter sales for July: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 8:
+	      cout << "Enter sales for August: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 9:
+	      cout << "Enter sales for September: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 10:
+	      cout << "Enter sales for October: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 11:
+	      cout << "Enter sales for November: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    case 12:
+	      cout << "Enter sales for December: ";
+	      cin >> user_input;
+	      total += user_input;
+	      break;
+	    }
+	}
+      // Print out sales for the year
+      cout << "Total sales this year: $" << total << endl;
     }
   else
     {
