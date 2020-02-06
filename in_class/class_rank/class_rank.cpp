@@ -9,9 +9,12 @@ int main()
   const int SOPHOMORE = 2;
   const int JUNIOR = 3;
   const int SENIOR = 4;
+  const int GRADUATE = 5;
+ 
   // Declare other variables
   float GPA;
   int class_selection;
+  int futue_class; 
 
   // Get the users current class rank
   cout << "What year are you? Please make a selection:" << endl;
@@ -25,17 +28,21 @@ int main()
   if (class_selection == 1)
     {
       cout << "You will be a Sophomore next year." << endl;
+      future_class = 2
     }
   if (class_selection == 2)
     {
       cout << "You will be a Junior next year." << endl;
+      future_class = 3;
     }
   if (class_selection == 3)
     {
       cout << "You will be a Senior next year." << endl;
+      future_class = 4;
     }
   if (class_selection == 4)
     {
+      future_class = 5;
       if (GPA > 3.6)
 	{
 	  cout <<  "You are graduating magma cum laude!" << endl;
