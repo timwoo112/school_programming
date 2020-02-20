@@ -1,0 +1,187 @@
+#include <iostream>
+using namespace std;
+
+// Declare functions
+int showMenu();
+float getInput(int);
+float add(float, float);
+float subtract(float, float);
+float multiply(float, float);
+float divide(float, float);
+bool tryAgain();
+
+int main()
+{
+  // Declare input variables;
+  float number_1 = 0;
+  float number_2 = 0;
+  int operation_selection;
+  // Other variables
+  float answer = 0;
+  bool try_again;
+  bool was_error = false;
+
+  do{
+    cout << "------------------------------------------------" << endl;
+    // Get operation selection using the showMenu() function.
+    // Set result equal to  operation_selection variable
+    operation_selection = showMenu();
+
+    // Ask user for the two numbers using the getInput() function
+    number_1 = getInput(1);
+    number_2 = getInput(2);
+  
+    // Use switch to perform the correct operation based off of operation_selection
+    switch (operation_selection)
+      {
+      case 1:
+	answer = add(number_1, number_2);
+	was_error = false;
+	break;
+      case 2:
+	answer = subtract(number_1, number_2);
+	was_error = false;
+	break;
+      case 3:
+	answer = multiply(number_1, number_2);
+	was_error = false;
+	break;
+      case 4:
+	if (number_2 != 0)
+	  {
+	    answer = divide(number_1, number_2);
+	    was_error = false;
+	  }
+	else
+	  {
+	    cout << "You cannot divide by zero." << endl;
+	    was_error = true;
+	  }
+	break;
+      }
+  
+    // Print out the answer if there was no error
+    if (!was_error)
+      {
+	cout << "The answer is: " << answer << endl;
+      }
+    
+    //Ask user if they want to try again, sets try_again to true/false
+    try_again = tryAgain();
+  }while(try_again);
+  
+  return 0;
+}
+
+int showMenu()
+{
+  const int add = 1;
+  const int subtract = 2;
+  const int multiply = 3;
+  const int divide = 4;
+  int user_selection;
+  cout << "Please enter your operation selection: " << endl;
+  cout << "|Add: 1, Subtract: 2, Multiply: 3, Divide: 4|: ";
+  while(!(cin >> user_selection))
+    {
+      cout << "Invalid input" << '\n';
+      cin.clear();
+      cin.ignore(10000, '\n');
+      cout << "Please try again: " << endl;
+      cout << "|Add: 1, Subtract: 2, Multiply: 3, Divide, 4|: ";
+    }
+  switch(user_selection)
+    {
+    case 1:
+      cout << "You chose addition." << endl;
+      break;
+    case 2:
+      cout << "You chose subtraction." << endl;
+      break;
+    case 3:
+      cout << "You chose multiplication." << endl;
+      break;
+    case 4:
+      cout << "You chose division." << endl;
+      break;
+    default: // This default statement recursively calls showMenu() for valid input
+      cout << "You made an invalid selection." << endl;
+      user_selection = showMenu();
+    }
+
+  // Return user_selection
+  return user_selection;
+}
+
+float getInput(int iteration)
+{
+  float user_input;
+  cout << "Please enter number " << iteration << ": ";
+  while(!(cin >> user_input))
+    {
+      cout << "Invalid input" << '\n';
+      cin.clear();
+      cin.ignore(10000, '\n');
+      cout << "Please enter number " << iteration << ": ";
+    }
+
+  return user_input;
+}
+
+float add(float num1, float num2)
+{
+  return num1 + num2;
+}
+
+float subtract (float num1, float num2)
+{
+  return num1 - num2;
+}
+
+float multiply(float num1, float num2)
+{
+  return num1 * num2;
+}
+
+float divide(float num1, float num2)
+{
+  return num1 / num2;
+}
+
+bool tryAgain()
+{
+  char loop_selection = 'w';
+  // Will keep looping until the user enters a valid 'y' or 'n'                
+  while(loop_selection == 'w')
+    {
+      // Ask user if they would like to play again.                            
+      cout << "Would you like to try again? (y or n): ";
+
+      // Will keep looping until the user enters a valid char                  
+      while(!(cin >> loop_selection))
+	{
+	  cin.clear();
+	  cin.ignore(10000, '\n');
+	  loop_selection = 'w';
+	}
+      if(loop_selection == 'y')
+	{
+	  cout << "Restarting program" << endl;
+	  cout << "------------------------------------------------" << endl;
+	  return true;
+	}
+      else if(loop_selection == 'n')
+	{
+	  cout << "Goodbye" << endl;
+	  return false;
+	}
+      else
+	{
+	  cout << "Invalid input, please try again: " << endl;
+	  cin.clear();
+	  cin.ignore(10000, '\n');
+	  loop_selection = 'w';
+	}
+    }
+
+}

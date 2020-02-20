@@ -4,12 +4,13 @@ using namespace std;
 
 int main()
 {
-  int number = 10;
-  number += 5;
-  number -= 2;
-  number *= 3;
+  int total = 1;
 
-  cout << number << endl;
-  
+  while(total < 10)
+    {
+      cout << total << endl;
+      total++;
+      break;
+    }
   return 0;
 }
