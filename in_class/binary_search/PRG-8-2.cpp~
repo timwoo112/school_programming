@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int binarySearch(const int[], int, int);
+
+const int SIZE = 20;
+
+int main()
+{
+  int idNums[SIZE] = { 101, 142, 147, 189, 199, 207, 222, 234, 289, 296, 310, 319, 388, 394, 417, 429, 447, 521, 536, 600 };
+  int results;
+  int empID;
+
+  cout << "Enter the employee id you wish to search for: ";
+  cin >> empID;
+
+  results = binarySearch(idNumbs, SIZE, empID);
+
+  if(results == -1)
+    {
+      cout << "That number does not exist in the array";
+    }
+  return 0;
+}
