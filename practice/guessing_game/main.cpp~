@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespaces std;
+
+int main()
+{
+
+  return 0;
+}
+
+int getGuess()
+{
+  int user_guess;
+  cout << "Enter here: ";
+  cin >> user_guess;
+
+  return user_guess;
+}
