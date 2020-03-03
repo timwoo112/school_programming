@@ -1,0 +1,25 @@
+Outline:
+- I will need a an array named prices with the following values: 10.95, 16.32, 12.15, 8.22, 15.98, 26.22, 13.54, 6.45, and 17.59.
+- I will use two functions to display the data in different ways.
+- Function1 will just display the entire array object on one line.
+- Function2 will use a for loop to display the array formatted.
+
+Pseudocode:
+Main Function:
+1. call the enterArray function
+2. call the printFormattedArray function
+
+function enterArray(array):
+1. get array input using a for loop based on size of the array(9).
+2. Print out the array that the user inputed using another for loop.
+
+function printFormattedArray:
+1. for(length(x) of array):
+     print array[x]
+     // This formula will print a newline every three items in the array
+2.   if ((x+1)%3) == 0:
+       print '\n'
+     
+Problems I ran into that I did not expect in the outline:
+1. I initially misunderstood the instructions and hard coded the array values. After reading over it again I realized that it was actually asking the user to input the values into the array. 
+2. I forgot about the array size actually being (arraysize - 1)
