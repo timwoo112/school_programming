@@ -1,0 +1,24 @@
+OUTLINE:
+- I will need the following constants: federal tax rate, state tax rate, city tax rate, FICA tax rate.
+- I will need the following arrays: employee ID, hours worked, pay rate, gross pay- federal taxes, state tax, city tax, school tax, fica tax, net pay.
+- I will use for loops to iterate, so that I can easily iterate through the arrays in parralel.
+- Because of data validation I am going to create two functions to hold the logic for getting employee pay rate and employee hours. That will help keep the code clean and easier for me to get this done.
+- Dont forget to call the <array> header.
+
+LOGIC:
+// Declare my headers
+iostream and array
+// Create function prototypes
+double getPayRate()
+int getHours()
+
+MAIN FUNCTION:
+// Declare the constants
+FEDERAL = .10
+STATE = .0575
+CITY = .0275
+FICA = 0.62
+// Declare all the arrays
+empID = {5658845,4520125,7895122,8777541,8451277,1302850,7580489}
+hours
+pay
