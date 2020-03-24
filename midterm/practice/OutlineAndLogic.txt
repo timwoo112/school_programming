@@ -1,0 +1,70 @@
+OUTLINE:
+- I will need the following constants: federal tax rate, state tax rate, city tax rate, FICA tax rate.
+- I will need the following arrays: employee ID, hours worked, pay rate, gross pay- federal taxes, state tax, city tax, school tax, fica tax, net pay.
+- I will use for loops to iterate, so that I can easily iterate through the arrays in parralel. I will need to use two of these for loops. 1. to get the informatioon from the user and to calculate all of the values. 2. To format/print out the information.
+- Because of data validation I am going to create two functions to hold the logic for getting employee pay rate and employee hours. That will help keep the code clean and easier for me to get this done.
+- Dont forget to call the <array> header.
+
+LOGIC:
+// Declare my headers
+iostream and array
+// Create function prototypes
+double getPayRate()
+int getHours()
+
+START MAIN FUNCTION:
+// Declare the constants
+FEDERAL = .10
+STATE = .0575
+CITY = .0275
+FICA = 0.62
+// Declare all the arrays
+array<int, 7> empID = {5658845,4520125,7895122,8777541,8451277,1302850,7580489}
+array<int, 7> hours
+array<double, 7> payRate, grossPay, fedTax, stateTax, cityTax, schoolTax, ficaTax, netPay
+
+// Use a for loop to iterate over the employees
+START for (i in range empID size):
+- payRate[i] = get employee payrate with the getPayRate function.
+- hours[i] = get employee hours with the get payHours function.
+- grosspay[i] = hours[i] * payRate[i]
+- fedTax[i] = grossPay[i] * FEDERAL
+- stateTax[i] = grossPay[i] * STATE
+- cityTax[i] = grossPay[i] * CITY
+- ficaTax[i] = grossPay[i] * FICA
+- netPay[i] = (grossPay[i]) - (fedTax[i] + stateTax[i] + cityTax[i] + ficaTax[i]
+for END
+
+// Use a for loop to iterate over employees again and format and print out info.
+START for (i in range empID size):
+- print empID[i]
+- print grossPay[i]
+- print fedTax[i]
+- print stateTax[i]
+- print cityTax[i]
+- print ficaTax[i]
+- print netPay[i]
+for END
+MAIN END
+
+// HELPER FUNCTIONS
+START double getPayRate()
+- Declare double payRateInput()
+- Ask for user to enter hourly pay rate.
+START while loop - while cin data type is not valid || payRateInput < 15.00)
+- clear the cin buffer
+- ask the user to enter the input again.
+END while loop
+- After the data has been validated we can return that to the main function
+- Return payRateInput
+END getPayRate()
+
+START int hoursInput()
+- Declare int hoursInput
+- Ask user to enter how many hours they worked.
+START while loop - while cin data type is not valid || hoursInput is not positive.
+- Clear the cin buffer
+- Ask user to input the hours again.
+END while loop
+- After the data has been validated we can return that to the main function
+- Return hoursInput
