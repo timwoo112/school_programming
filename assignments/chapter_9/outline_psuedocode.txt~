@@ -1,0 +1,11 @@
+OUTLINE:
+- What variables will I need:
+  - A dynamically allocated array of integers for number of movies each student saw.
+  - A integer to hold how many people are represented in the array.
+- Functions:
+  - I have been provided two functions calcMedian() and calcMode(). I will need to create a calcAverage(). It should take two parameters, the array and array size.
+  - calcAverage() should return the average of the array.
+
+PSEUDOCODE:
+Start main()
+declare input variable

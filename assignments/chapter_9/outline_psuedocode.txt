@@ -1,0 +1,36 @@
+Author: Tim Woolley
+OUTLINE:
+- What variables will I need:
+  - A dynamically allocated array of integers for number of movies each student saw.
+  - A integer to hold how many people are represented in the array.
+  - An integer variable to hold the mode value.
+  - Two double variables to hold the median and average.
+- Functions:
+  - I have been provided two functions calcMedian() and calcMode(). I will need to create a calcAverage(). It should take two parameters, the array and array size.
+  - calcAverage() should return the average of the array.
+
+PSEUDOCODE:
+START main()
+// Declaring variables
+declare maxsize of array variable, mode, median, and average.
+
+// Logic
+- Ask user to enter how many students were surveyed store the number of students surveyed in the max size variable.
+- Create the dynamic array based on the max variable input from the user.
+- calcMedian() to find the median number of movies
+  - Print out the median
+- calcMode() to find the mode of movies watched
+  - If the calcMode() function returned -1 then print, "There was no mode"
+  - Else print out the mode.
+- calcAverage() to find the average of movies watched.
+  - Print out the average.
+END main()
+
+START calcAverage(array pointer, number of spots in array) - Accepts a pointer to the array and the number of spots in array
+- Declare average and total variables.
+- Loop through the array and add each value towards the total variable.
+- Set average equal to the total / number of spots in the array.
+- Return average.
+END calcAverage
+
+calcMedian and calcMode already provided!
