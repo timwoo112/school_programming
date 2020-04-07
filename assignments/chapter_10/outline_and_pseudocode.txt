@@ -1,0 +1,82 @@
+Author: Tim Woolley
+OUTLINE:
+- Helper FUNctions needed:
+  - countVowels() -> Will return number of vowels in the string
+    - Iterates over each letter in the user string and compares to each vowel.
+    - Adds onto vowel count if it finds a match.
+  - countConsonants() -> Will return number of consonants in the string
+    - Iterates over each letter in the user string and compares to each vowel.
+    - Adds onto consonant count if it finds no match.
+  - menuSelection() -> Will ask user what function they want to perform. Will loop until repeatProgram() returns false.
+    - If the user wants to change the string it will return true to the main funciton.
+  - repeatProgram() -> Returns true or false depending on if the user wants to run the program again.
+- Variables needed:
+  - A string variable
+  - A pointer variable that points to a string.
+- Loops:
+  - I will use a do-while loop to encase the program, so it can be ran again.
+  - Will use for loops to iterate over the user provided string.
+
+PSEUDOCODE:
+START MAIN():
+- Declare string variable(string) and string pointer(stringPtr)
+- START DO WHILE LOOP: -> do x while repeatProgram() returns true
+  - Ask the user to enter their string and set it to the string var.
+  - Set the string pointer to &string
+  - START WHILE LOOP -> while menuSelectionAndOutput returns true
+    - During the while test, the user gets to select what output they want to see.
+    - If it is true, enter a new string.
+  - END WHILE LOOP
+- END WHILE LOOP if repeatProgram() returns false, otherwise run again.
+- return 0
+END MAIN
+
+START countVowels(string* userString):
+- string vowels = "aeiou"
+- int vowelCount = 0;
+- START FOR LOOP
+  - Loop through each letter and compare to each letter in vowels variable.
+  - If there is a match, then increase the vowel count by one.
+- return voweCount
+END countVowels(string* userString)
+
+START countConsonant(string* userString)
+- int consonantCount = 0
+- string vowels = "aeiou"
+- bool matchVowel = false // This is set to false as default
+- START for loop
+  - If any of the letter in the userString dont match the vowels, increase the count by one.
+- END for loop.
+- Return the consonantCount.
+END countConsonant(string* userString)
+
+START repeatProgram() -> returns true or false if the user wants to repeat the program
+- bool decision = false
+- char userChoice;
+- Ask user if they want to try again and set it to the userChoice.
+ - Use if statement to set the bool variable to true/false
+  - If they say yes then set the decision to true
+  - If they say no then set the decision to false
+- Return the decision
+END repeatProgram()
+
+START bool menuSelectionAndOutput(string* userString)
+// This is where the user gets to make their selection
+// And then that selection calls on the two counter functions to output the info.
+- char userSelection
+- bool createNew = false
+- Ask the user what information they want about their string.
+  - A. count vowels
+  - B. count consonants
+  - C. count both vowels and consonants
+  - D. enter a new string
+  - E. exit the program
+  - validate and save the user input nto userSelection
+- START Switch statement
+  - case A -> print countVowels(userString)
+  - case B -> print countConsonants(userString)
+  - case C -> print countVowels(userString) and countConsonants(userString)
+  - case D -> set createNew to true, so that when it returns to main function the user will be asked to enter a new string.
+  - case E -> exit the program.
+- END Switch statement
+END menuSelectionAndOutput

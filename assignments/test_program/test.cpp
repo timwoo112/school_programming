@@ -1,16 +1,21 @@
 #include <iostream>
-
+#include <string>
+#include <cctype>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-  int numerator = 5;
-  int denominator = 25;
-  int temp = 0;
-  temp = numerator;
-  numerator = denominator;
-  denominator = temp;
-  cout << numerator << "/" << denominator << "=" << (numerator/denominator) << endl;
+  string myString;
+  cout << "Enter string";
+  getline(cin, myString);
+  myString.erase(remove_if(myString.begin(), myString.end(), ::isspace), myString.end());
+  cout << myString;
   
+  string wow = "Hello World wo wo wo";
+  wow.erase(remove_if(wow.begin(), wow.end(), ::isspace), wow.end());
+	
+  cout << wow;
+
   return 0;
 }
