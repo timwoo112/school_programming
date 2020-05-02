@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "Journal.h"
 
 using namespace std;
@@ -9,26 +8,25 @@ int menu();
   
 int main()
 {
-  // Initialize the user's journal
-  Journal user;
-  bool exitProgram = false;
-  int selection;
+  Journal user; // Initialize a journal instance
+  bool exitProgram = false; // Set to false by default so program loops
+  int selection; // Holds the user's selection from menu()
   do
     {
       selection = menu();
       switch(selection)
 	{
 	case 1:
-	  user.writeGoal();
+	  user.writeGoal(); // Write a new goal
 	  break;
 	case 2:
-	  user.searchGoals();
+	  user.searchGoals(); // Search goals
 	  break;
 	case 3:
-	  user.readGoals();
+	  user.readGoals(); // Read all goals
 	  break;
 	case 4:
-	  exitProgram = true;
+	  exitProgram = true; // exit the program
 	  break;
 	default:
 	  cout << "An error occurred :0" << endl;
@@ -40,12 +38,8 @@ int main()
   return 0;
 }
 
-/*
---------------------------------------
-Functions section
---------------------------------------
-*/
 
+// Ask the user for input from a menu, return their selection in an integer
 int menu()
 {
   string menuText =
