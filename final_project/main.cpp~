@@ -1,0 +1,57 @@
+#include <iostream>
+#include <vector>
+#include "Journal.h"
+
+using namespace std;
+
+// Function prototypes
+bool programLoop();
+
+int main()
+{
+  // Initialize the user's journal
+  Journal user;
+  do
+    {
+      // Run program
+      Clear();
+      user.writeGoal();
+      Clear();
+      user.readGoals();
+      Clear();
+      user.searchGoals();
+    }
+  while(programLoop());
+  
+  return 0;
+}
+
+/*
+--------------------------------------
+Functions section
+--------------------------------------
+*/
+
+// This handles the looping of the entire program, returns true or false
+bool programLoop()
+{
+  string userInput;
+  cout << "Would you like to perform another action?" << endl;
+  cout << "yes or no: ";
+  while(!(cin >> userInput) || (userInput != "yes" && userInput != "no"))
+    {
+      cout << "Invalid input, try again." << endl;
+      cout << "yes or no: ";
+      cin.clear();
+      cin.ignore(10000, '\n');
+    }
+  if (userInput == "yes")
+    {
+      return true;
+    }
+  else
+    {
+      cout << "Good bye!" << endl;
+      return false;
+    }
+}

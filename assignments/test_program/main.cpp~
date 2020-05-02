@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+
+  int myArray[2] = {1,1};
+
+  cout << myArray << endl;
+  
+  return 0;
+}
