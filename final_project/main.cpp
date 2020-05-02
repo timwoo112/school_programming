@@ -5,7 +5,6 @@
 using namespace std;
 
 // Function prototypes
-bool programLoop();
 int menu();
   
 int main()
@@ -74,28 +73,4 @@ int menu()
       cin.ignore(10000, '\n');
     }
   return selection;
-}
-
-// This handles the looping of the entire program, returns true or false
-bool programLoop()
-{
-  string userInput;
-  cout << "Would you like to perform another action?" << endl;
-  cout << "yes or no: ";
-  while(!(cin >> userInput) || (userInput != "yes" && userInput != "no"))
-    {
-      cout << "Invalid input, try again." << endl;
-      cout << "yes or no: ";
-      cin.clear();
-      cin.ignore(10000, '\n');
-    }
-  if (userInput == "yes")
-    {
-      return true;
-    }
-  else
-    {
-      cout << "Good bye!" << endl;
-      return false;
-    }
 }
